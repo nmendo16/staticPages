@@ -1,0 +1,784 @@
+COMP 213_009
+Nov. 29, 2023//week 12
+
+
+Basics of Web Design
+Chapter 11
+Media and Interactivity Basics
+Key Concepts
+
+***********************************
+
+***Helper Applications & Plug-ins
+
+>Helper Application
+– A program that can be designated to handle a
+particular file type (such as .wav or.mpg) to allow the
+user to view or otherwise utilize the special file.
+– The helper application runs in a separate window from
+the browser.
+
+>Plug-In (OR EXTENSION)
+– A newer and more common method
+– Plug-ins run right in the browser window so that media
+objects can be integrated directly into the web page.
+= a third party
+
+
+***Containers & Codecs
+
+• Container
+– Designated by the file extension – contains the media
+and metadata
+
+• Codec
+– The algorithm used to compress the media
+= files can only opened by specific application
+
+• HTM L 5 audio & video
+– Native to the browser
+– Browsers do not support the same codecs 
+- http://www.jwplayer.com/html5/
+
+>Commonly Used Plug-ins
+• Adobe Flash Player
+• Adobe Reader
+• Apple Quicktime
+
+
+>Common Audio File Types
+• .wav 	Wave File
+• .aiff Audio Interchange File Format
+• .mid 	Musical Instrument Digital Interface (M I D I)
+• .au Sun UNI X sound file
+• .mp3 M PE G-1 Audio Layer-3
+• .ogg Ogg Vorbis (open-source)
+• . m4a M PE G 4 Audio.
+	= This audio-only M PE G-4 format is supported by 	Quicktime, iTunes, and iPods.
+
+
+>Common Video File Types
+• .mov Quicktime
+• .avi Microsoft Audio Video Interleaved
+• .wmv Windows Media File
+• .flv Flash Video File
+• .mpg M PE G (Motion Picture Experts Group)
+• .m4v .mp4 (M PE G-4)
+• .ogv Ogg Theora (open-source)
+• .webmV P8 codec (open video format, free)
+
+
+***Copyright Issues
+• Only publish web pages, images, and other media that you have personally created or have obtained the rights or license to use.
+• Ask permission to use media created by another person instead of simply “grabbing” it.
+• All work (including web pages) are automatically copyrighted even if there is not copyright mark or date.
+• Fair Use Clause of the Copyright Act
+• Creative Commons – A new approach to copyright
+	https://creativecommons.org/
+
+
+***Configure Audio & Video
+• The most basic method to provide audio or video files:
+	– Hyperlink
+
+EXAMPLE:
+<a href="wdfpodcast.mp3" title="Web Design Podcast">Web Design Podcast</a>
+
+
+EXAMPLE OF AUDIO CODE:**************
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Adding a Sound Using the Audio Tag</title>
+<meta charset="utf-8">
+<style>
+body { background-color: #FFFFFF;
+       color: #0000FF;
+       font-family: Arial,san-serif;
+}
+</style>       
+</head>
+<body>
+ <p>This page has a sound loop added to it using the &lt;audio&gt; tag.</p>
+ 
+
+<audio controls="controls">
+       <source src="soundloop.mp3" type="audio/mpeg">
+	<!-- <source src="soundloop.ogg" type="audio/ogg">  -->
+	<a href="soundloop.mp3">Download the Audio File</a> (MP3)
+ </audio>
+
+
+</body>
+</html>
+
+*****************************************
+
+COMPONENTS:
+<audio controls="controls"> 
+= BE SPECIFIC
+
+<source src="soundloop.mp3" type="audio/mpeg"> 
+= INCLUDE A SOURCE WITH ITS TYPE[IMPORTANT TO STATE THE TYPE]
+
+(MIME = Multipurpose Internet Mail Extensions (MIME) is an Internet standard that extends the format of email messages to support text in character sets other than ASCII, as well as attachments of audio, video, images, and application programs)
+
+<a href="soundloop.mp3">Download the Audio File</a> (MP3)
+= ANCHOR TAG
+
+
+
+>Multimedia & Accessibility
+• Provide alternate content
+– Transcript (for audio)
+– Captions (for video)
+– Text format
+
+
+>What is Adobe Flash?
+• A popular multimedia application
+• Create multimedia that adds visual interest and
+interactivity to web pages
+• Flash movies are saved in “.swf” files
+• Perception of speedy display
+• .swf files play as they download
+• Flash Player
+	– Free browser plug-in
+	– Widely installed on browsers
+
+
+EXAMPLE OF VIDEO CODE:*********************
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lighthouse Cruise</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Lighthouse Cruise</h1>
+    <video controls="controls" poster="lighthouse.jpg" width="640" height="480">
+        <source src="lighthouse.m4v" type="video/mp4">
+        <!-- <source src="lighthouse.ogv" type="video/ogg"> -->
+        <embed type="application/x-shockwave-flash" src="lighthouse.swf" width="320" height="240"
+            title="Door County Lighthouse Cruise">
+    </video>
+</body>
+
+</html>
+
+*****************************************
+
+>HTML 5 Embed Element
+<embed type="application/x-shockwave-flash"
+	src="fall5.swf"
+		width="640"
+		height="100"
+		quality="high” (DOES NOT REALLY WORK)
+		title="Fall Nature Hikes">
+
+
+MDM WEB DOCS****************
+MDN Web Docs, previously Mozilla Developer Network and formerly Mozilla Developer Center, is a documentation repository and learning resource for web developers.
+*****************************
+
+>HTML 5 Audio & Source Elements
+
+<audio controls="controls">
+	<source src="soundloop.mp3" type="audio/mpeg">
+		<source src="soundloop.ogg" type="audio/ogg">
+		<a href="soundloop.mp3">Download the Audio File</a> (M P 3)
+
+</audio>
+
+
+
+>HTML 5 Video & Source Elements
+<video controls="controls" poster="sparky.jpg"
+	width="160" height="150">
+		<source src="sparky.m4v" type="video/mp4">
+		<source src="sparky.ogv" type="video/ogg">
+	<a href="sparky.mov">Sparky the Dog</a> (.mov)
+
+</video>
+
+
+
+
+>Use the iframe element to embed YouTube Video
+<iframe src="http://www.youtube.com/embed/VIDEO_ID"
+	width="640" height="385">
+	View the
+<a href="http://www.youtube.com/watch?v=VIDEO_ID">YouTube
+Video</a>
+
+</iframe>
+
+ANOTHER EXAMPLE:
+ <h4>Iframe Example</h4>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/FiWby-T0Ec0?si=BD9YIHWvCcvN1l0a&amp;start=60"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+
+WIDTH= WIDTH OF FRAME
+HEIGHT= HEIGHT OF FRAME
+SRC= THE URL SOURCE, LINKED TO THE VIDEO
+	START= POINT WHERE THE VIDEO STARTS
+TITLE= 
+FRAMEBORDER= 
+***ALLOW= FOR BROWSER SUPPORT, 
+	accelerometer; 
+	autoplay; 
+	clipboard-write; 
+	encrypted-media; 
+	gyroscope; 
+	picture-in-picture; 
+	web-share
+ALLOWFULLSCREEN= 
+
+
+EMBED OPTIONS = ALLOW YOUTUBE LINKS FOR INTERACTIVITY
+
+
+***OMNI CALCULATOR = SOURCE CODES FOR WEBSITES
+= THEY CREDIT THEMSELVES LIKE YOUTUBE
+
+IF ATTACHMENTS CREDITS THEMSELVES, YOU DO NOT HAVE TO CREDIT THEM IN YOUR WEBSITES FOOTER
+
+
+
+>CSS 3 Transform Property
+• Allows you to rotate, scale, skew, or move an element
+Examples:
+• Rotate 3 degrees: transform: rotate(3deg);
+• Display twice as large: transform: scale(2);
+
+
+>CSS 3 Transition Property
+= ANIMATION, ADDS BEHAVIOUR TO YOUR ELEMENTS
+= YOU CAN SPECIFY HOW LONG THE TRANSITION OCCURS
+• Provides for changes in property values to display in a
+smoother manner over a specified time.
+• Example:
+nav a:hover { color: #869dc 7;
+	background-color: #eaeae a;
+	transition: background-color 2s linear; }
+
+
+EXAMPLE: CSS
+
+    .figure {
+      float: right;
+      width: 260px;
+      margin: 20px;
+      background-color: #FFF;
+      text-align: center;
+      font-size: .8em;
+      padding: 5px;
+      border: 1px solid #CCC;
+      -webkit-transform: rotate(3deg);
+      -moz-transform: rotate(3deg);
+      -o-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+      transform: rotate(3deg);
+      -webkit-box-shadow: 5px 5px 5px #828282;
+      -moz-box-shadow: 5px 5px 5px #828282;
+      box-shadow: 5px 5px 5px #828282;
+    }
+
+    .figure:hover {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(-200deg);
+      -webkit-transition: -webkit-transform .5s linear;
+      -moz-transition: -moz-transform .5s linear;
+      -o-transition: -o-transform .5s linear;
+      transition: transform .5s linear;
+    }
+
+      
+transform: rotate(3deg); =TRANSFORMING THE DEFAULT ROTATION OF THE IMAGE TO 3 DEGREES
+
+
+      -webkit-transform: rotate(3deg);
+      -moz-transform: rotate(3deg);
+      -o-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+= THESE ARE ALT IF TRANSFORM DOES NOT WORK OR EXIST
+= THESE ARE BROWSER SPECIFIC/IDENTIFIED TRANSFORMATION
+
+
+      -webkit-box-shadow: 5px 5px 5px #828282;
+      -moz-box-shadow: 5px 5px 5px #828282;
+= THESE ARE JUST ALTS FOR BOX-SHADOW
+box-shadow: 5px 5px 5px #828282;= THIS WORK
+
+
+
+CS S Image Gallery
+• Configure each thumbnail image:
+<li><a href="photo1.jpg"><img src=“thumb1.jpg"
+width="100" height="75" alt="Golden Gate Bridge">
+<span><img src="photo1.jpg" width="400" height="300“
+alt="Golden Gate Bridge"><br>Golden Gate Bridge </span></a>
+</li>
+• The key CS S:
+#gallery span { position: absolute;
+left: -1000px; }
+#gallery a:hover span {
+position: absolute;
+top: 16px; left: 320px;
+text-align: center; }
+
+
+EXAMPLE CODE************
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Image Gallery</title>
+  <meta charset="utf-8">
+  <style>
+    #gallery {
+      position: relative;
+    }
+
+    #gallery ul {
+      list-style-type: none;
+      width: 300px;
+    }
+
+    #gallery li {
+      display: inline;
+      float: left;
+      padding: 10px;
+    }
+
+    #gallery img {
+      border-style: none;
+    }
+
+    #gallery a {
+      text-decoration: none;
+      font-style: italic;
+      color: #333;
+    }
+
+    #gallery span {
+      display: none;
+    }
+
+    #gallery a:hover span {
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 300px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Image Gallery</h1>
+  <div id="gallery">
+    <ul>
+      <li>
+        <a href="photo1.jpg">
+          <img src="photo1thumb.jpg" width="100" height="75" alt="Golden Gate Bridge">
+          <span>
+            <img src="photo1.jpg" width="400" height="300" alt="Golden Gate Bridge">
+            <br>
+            Golden Gate Bridge
+          </span>
+        </a>
+      </li>
+      <li><a href="photo2.jpg"><img src="photo2thumb.jpg" width="100" height="75" alt="rocky coastline">
+          <span><img src="photo2.jpg" width="400" height="300" alt="Rocky coastline"><br>Rocky Coastline</span></a>
+      </li>
+      <li><a href="photo3.jpg"><img src="photo3thumb.jpg" width="100" height="75" alt="clouds moving in on the coast">
+          <span><img src="photo3.jpg" width="400" height="300" alt="clouds moving in on the coast"><br>Clouds Moving In
+            on the Coast</span></a>
+      </li>
+      <li><a href="photo4.jpg"><img src="photo4thumb.jpg" width="100" height="75" alt="waterfall near Big Sur">
+          <span><img src="photo4.jpg" width="400" height="300" alt="waterfall near Big Sur"><br>Waterfall Near Big
+            Sur</span></a>
+      </li>
+      <li><a href="photo5.jpg"><img src="photo5thumb.jpg" width="100" height="75" alt="waves crashing on the coast">
+          <span><img src="photo5.jpg" width="400" height="300" alt="waves crashing on the coast"><br>Waves Crashing in
+            on the Coast</span></a>
+      </li>
+      <li><a href="photo6.jpg"><img src="photo6thumb.jpg" width="100" height="75" alt="sunset on the coast">
+          <span><img src="photo6.jpg" width="400" height="300" alt="sunset on the coast"><br>Sunset on the
+            Coast</span></a>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
+
+***************************************
+
+
+USE SPAN
+DO NOT DISPLAY SPAN
+HOVER OVER THE IMAGE TO LOAD SPAN
+
+TEXT UNDER SPANNED IMAGE
+TEXT CENTERED
+
+    #gallery a:hover span {
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 300px;
+      text-align: center;
+    }
+
+IT MEANS THAT IF YOU HOVER OVER THE
+SMALL IMAGE (AN ANCHOR TAG) THEN YOU
+WILL  DISPLAY THE SPAN      
+	display: block;
+      	position: absolute;
+      	top: 10px;
+      	left: 300px;
+      	text-align: center;
+
+**************************************
+
+>CSS Drop Down Menu
+• Configure nav container with position relative
+• Code submenu (drop down menu) ul element with the
+parent li element
+• Configure submenu ul element to initially not display
+• Configure submenu ul element with absolute positioning
+
+
+
+
+>HTML 5 Details & Summary Elements
+
+• Configure an interactive widget
+• As of 2018, still not supported by all
+modern browsers
+• Check http://caniuse.com/#feat=details
+
+<details>
+<summary>Repetition</summary>
+<p>Repeat visual components throughout
+the design</p>
+</details>
+<details>
+<summary>Contrast</summary>
+<p>Add visual excitement and draw
+attention</p>
+</details>
+<details>
+<summary>Proximity</summary>
+<p>Group related items</p>
+</details>
+<details>
+<summary>Alignment</summary>
+<p>Align elements to create visual unity</p>
+</details>
+
+SUMMARY = SHOWS 24/7
+P TAG= SHOWS WHEN THE SUMMARY IS SELECTED
+
+
+
+
+********************************************
+What is JavaScript?*************************
+• Object-based scripting language
+• Manipulates the objects associated with a Web page
+document:
+	– the window
+	– the document
+	– the elements such as forms, images, hyperlinks, and so on
+
+
+>Common Uses of JavaScript
+• Display a message box
+• Select list navigation
+• Edit and validate form information
+• Create a new window with a specified size and screen
+	position
+• Image Rollovers
+• Status Messages
+• Display Current Date
+• Calculations
+
+
+(.JS FILE)
+= MUST BE AT THE BOTTOM OF THE BODY TAG
+= ENDS BEFORE THE </BODY>
+1. SCRIPT ELEMENT
+2. FOLLOWED BY SOURCE
+
+ <script src="./intro.js"></script>
+  <script type="text/javascript">
+    function drawMe() {
+      var canvas = document.getElementById("myCanvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "rgb(255, 0, 0)";
+        ctx.font = "bold 3em Georgia";
+        ctx.fillText("My Canvas", 70, 100); 
+        ctx.fillStyle = "rgba(0, 0, 200, 0.50)";
+        ctx.fillRect(57, 54, 100, 65);
+      }
+    }
+  </script>
+
+  <script async src="https://cdn.omnicalculator.com/sdk.js"></script>
+
+
+
+THE SOURCE:
+// multiplyBy = (x, y) => {
+//     number1 = x
+//     number2 = y
+
+//     return number1 * number2
+// }
+
+// helloClass = () => {
+//     return "Hello COMP213 Class! This is our section 007 demonstration"
+// }
+
+// houdiniAct = () => {
+//     var x = document.getElementById("myDIV");
+//     if (x.style.display === "none") {
+//         x.style.display = "block";
+//     } else {
+//         x.style.display = "none";
+//     }
+// }
+
+// console.log(multiplyBy(250000, 25))
+
+// document.getElementById("multiply").innerHTML = multiplyBy(10, 10)
+// document.getElementById("hello").innerHTML = helloClass()
+
+
+
+*****NODE.JS (EXTENSION FOR THE BROWSER TO BE ABLE TO READ AND LOAD JAVASCRIPT)
+
+BROWSER TERMINAL CHECKING//POWERSCHELL//CMD
+dev:~$ npm--version
+
+
+multiplyBy = (x, y) => {
+    number1 = x
+    number2 = y
+
+    return number1 * number2
+}
+
+// helloClass = () => {
+//     return "Hello COMP213 Class! This is our section 007 demonstration"
+// }
+
+// houdiniAct = () => {
+//     var x = document.getElementById("myDIV");
+//     if (x.style.display === "none") {
+//         x.style.display = "block";
+//     } else {
+//         x.style.display = "none";
+//     }
+// }
+
+// console.log(multiplyBy(250000, 25))
+
+// document.getElementById("multiply").innerHTML = multiplyBy(10, 10)
+// document.getElementById("hello").innerHTML = helloClass()
+
+console.log("The number is: " + multiplyBy(10, 15))
+
+
+****HOW TO ADD IN HTML
+1. DOCUMENT
+JAVASCRIPT CODE:
+document.getElementById("multiply").innerHTML = multiplyBy(10, 10)
+
+2. USE STYE
+CSS CODE:
+#multiply {
+  border: 1px solid #000000;
+  color: #326987;
+
+3. 
+
+4. CAN HIDE AND SHOW
+JAVASCRIPT CODE:
+houdiniAct = () => {
+     var x = document.getElementById("myDIV");
+     if (x.style.display === "none") {
+         x.style.display = "block";
+     } else {
+         x.style.display = "none";
+     }
+ }
+
+=WE ONLY HAVE ACCESS TO STYLE METHOD BECAUSE WE HAVE ACCESS TO DOCUMENT
+
+CSS CODE:
+#myDIV {
+  display: block;
+}
+#myDIV p {
+  color: purple;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  width: 50%;
+}
+
+HTML CODE
+ <button onclick="houdiniAct()">Try it</button>
+
+
+
+>Exploring JQuery
+• A JavaScript library intended to simplify client-side 	scripting
+• Example: http://webdevfoundations.net/jquery
+• API – Application Programming Interface
+	– A protocol that allows software components to 	Communicate – interacting and sharing data.
+• The jQuery AP I can be used to
+	configure many interactive features,
+	including:
+		– image slideshows
+		– animation (moving, hiding, fading)
+		– event handling (mouse movements and 			mouse clicking)
+		– document manipulation
+		– Ajax (JQUERY AJAX METHODS)
+			= ADDITION TO OUR JAVASCRIPT
+
+
+>HTML 5 APIs
+• API – a protocol that allows software components to communicate – interacting and sharing data
+• A variety of APIs that are intended to work with HTML 5, CSS, and JavaScript are currently under development and in the W 3 C approval process, including:
+	– geolocation
+	– web storage
+	– service workers
+	– canvas
+
+
+>HTML 5 Geolocation
+• Allows your web page visitors to share their geographic
+location
+• Their location may be determined by the I P address,
+wireless network connection, local cell tower, or G P S
+hardware depending on the type of device and browser.
+• JavaScript is used to work with the latitude and longitude
+coordinates provided by the browser.
+• Example:
+– http://html5demos.com/geo
+
+
+>HTML 5 Web Storage
+• Traditionally, the JavaScript cookie object has been used to store information
+in key-value pairs on the client (the website visitor’s computer).
+• NEW FOR H T M L 5: Web Storage AP I
+– provides two new ways to store information on the client side:
+local storage and session storage.
+– Advantage: increase in the amount of data that can be stored (5M B per
+domain).
+– The localStorage object stores data without an expiration date.
+– The sessionStorage object stores data only for the duration of the
+current browser
+– JavaScript is used to work with the values stored in the localStorage and
+sessionStorage objects.
+• Examples:
+– http://webdevfoundations.net/storage and http://html5demos.com/storage
+
+
+
+
+
+SQ LITE***>DATA BASES
+
+
+
+
+> HTML 5 PWA
+• Progressive Web Application
+– Offers a rich experience similar to a native app on a mobile device—the
+user can choose to add the website's icon to the home screen, and the
+website has some level of functionality even when the device is not
+connected to the Internet.
+
+• Manifest AP I
+– Contains information about the PW A; including the data needed for the
+P W A's icon to be added to the home screen of a
+
+• Service Workers AP I
+– Provides a way for websites to perform persistent background processing
+such as push notifications and background data syncing.
+– Service worker:
+JavaScript that runs in the background, separate from a web page, and
+listens for events such as install, activate, message, fetch, sync, and
+push.
+– Requires H TT P S
+
+
+
+
+HTML 5 Canvas Element
+• Configures dynamic graphics
+	– Draw lines, shapes, text, image
+	– Interact with actions taken by
+
+• Canvas AP I (application programming interface)
+
+• JavaScript – client-side scripting language
+
+<script type="text/javascript">
+function drawMe() {
+var canvas =
+	document.getElementById("myCanvas");
+		if (canvas.getContext) {
+		var ctx = canvas.getContext("2d");
+		ctx.fillStyle = "rgb(255, 0, 0)";
+		ctx.font = "bold 3em Georgia";
+		ctx.fillText("My Canvas", 70, 100);
+		ctx.fillStyle = "rgba(0, 0, 200, 0.50)";
+		ctx.fillRect (57, 54, 100, 65);
+	}
+}
+</script>
+
+
+= THIS CODE IS OUTDATED
+= WILL BE UPDATED NEXTWEEK
+
+
+ <script src="./intro.js"></script>
+
+  <script type="text/javascript">
+    drawMe = () => {
+      var canvas = document.getElementById("myCanvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "rgb(255, 0, 0)";
+        ctx.font = "bold 3em Georgia";
+        ctx.fillText("My Canvas", 70, 100); 
+        ctx.fillStyle = "rgba(0, 0, 200, 0.50)";
+        ctx.fillRect(57, 54, 100, 65);
+      }
+    }
+  </script>
+
+- scr will tell the source
+- then type will specify to vs code 
+
+
+
+
+
